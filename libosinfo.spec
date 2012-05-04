@@ -25,6 +25,7 @@ BuildRequires:	vala
 BuildRequires:	vala-tools
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(check)
+BuildRequires:	pkgconfig(libsoup-2.4)
 Requires:	udev
 
 %description
