@@ -13,7 +13,7 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	0.1.0
+Version:	0.1.1
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -41,16 +41,17 @@ Group:		System/Libraries
 Platform-independent files for the "%{libname}" library
 
 %files common
-%{_bindir}/osinfo-pciids-convert
-%{_bindir}/osinfo-usbids-convert
 %{_bindir}/osinfo-detect
+%{_bindir}/osinfo-db-validate
+%{_bindir}/osinfo-query
+%{_mandir}/man1/osinfo*.1.*
+%{_datadir}/libosinfo/db/oses
+%{_datadir}/libosinfo/db/*.ids
+%{_datadir}/libosinfo/db/devices
+%{_datadir}/libosinfo/schemas
+%{_datadir}/libosinfo/db/hypervisors
+%dir %{_datadir}/libosinfo/db
 %dir %{_datadir}/libosinfo/
-%dir %{_datadir}/libosinfo/data/
-%{_datadir}/libosinfo/data/usb.ids
-%{_datadir}/libosinfo/data/pci.ids
-%{_datadir}/libosinfo/data/devices
-%{_datadir}/libosinfo/data/oses
-%{_datadir}/libosinfo/data/hypervisors
 /lib/udev/rules.d/95-osinfo.rules
 
 
