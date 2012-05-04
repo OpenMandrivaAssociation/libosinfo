@@ -118,9 +118,3 @@ chmod a-x examples/*.js examples/*.py
 %install
 %makeinstall_std
 rm -f %{buildroot}%{_libdir}/*.la
-
-%check
-make check
-
-
-
