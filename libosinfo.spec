@@ -42,21 +42,13 @@ Group:		System/Libraries
 %description common
 Platform-independent files for the "%{libname}" library
 
-%files common
+%files common -f %name.lang
 %{_bindir}/osinfo-detect
 %{_bindir}/osinfo-install-script
 %{_bindir}/osinfo-db-validate
 %{_bindir}/osinfo-query
 %{_mandir}/man1/osinfo*.1.*
-%{_datadir}/libosinfo/db/oses
-%{_datadir}/libosinfo/db/install-scripts/*.xml
-%{_datadir}/libosinfo/db/*.ids
-%{_datadir}/libosinfo/db/devices
-%{_datadir}/libosinfo/schemas
-%{_datadir}/libosinfo/db/hypervisors
-%dir %{_datadir}/libosinfo/db
-%dir %{_datadir}/libosinfo/db/install-scripts
-%dir %{_datadir}/libosinfo/
+%{_datadir}/libosinfo
 /lib/udev/rules.d/95-osinfo.rules
 
 
@@ -118,6 +110,8 @@ GObject Introspection interface description for %{name}.
 %make V=1
 
 chmod a-x examples/*.js examples/*.py
+
+%find_lang %name || touch %name.lang
 
 %install
 %makeinstall_std
