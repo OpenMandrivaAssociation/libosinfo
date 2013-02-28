@@ -13,7 +13,7 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	0.2.3
+Version:	0.2.4
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -28,6 +28,13 @@ BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxslt)
 Requires:	udev
+
+%track
+prog %name = {
+	url = https://fedorahosted.org/releases/l/i/libosinfo/
+	regex = %name-(__VER__)\.tar\.gz
+	version = %version
+}
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
@@ -111,8 +118,7 @@ GObject Introspection interface description for %{name}.
 
 chmod a-x examples/*.js examples/*.py
 
-%find_lang %name || touch %name.lang
-
 %install
 %makeinstall_std
-rm -f %{buildroot}%{_libdir}/*.la
+
+%find_lang %name || touch %name.lang
