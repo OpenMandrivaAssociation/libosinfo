@@ -9,7 +9,7 @@
 %define girname		%mklibname %{oname}-gir %{girmajor}
 %define girnamegtk	%mklibname %{oname}-gtk-gir %{girmajor}
 
-%define _exclude_files_from_autoreq ^%{_datadir}/doc/%{develname}/demo.*$
+%define __no_autoreq '^%{_datadir}/doc/%{develname}/demo.*$'
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
