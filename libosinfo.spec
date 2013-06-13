@@ -1,16 +1,16 @@
-%define oname	osinfo
-%define api	1.0
-%define major	0
-%define libname	%mklibname %{oname} %{api} %{major}
-%define girname	%mklibname %{oname}-gir %{api}
-%define devname	%mklibname %{oname} %{api} -d
+%define oname osinfo
+%define api 1.0
+%define major 0
+%define libname %mklibname %{oname} %{api} %{major}
+%define girname %mklibname %{oname}-gir %{api}
+%define devname %mklibname %{oname} %{api} -d
 
 %define __no_autoreq '^%{_datadir}/doc/%{devname}/demo.*$'
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	0.2.4
-Release:	2
+Version:	0.2.7
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://fedorahosted.org/libosinfo/
