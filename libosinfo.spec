@@ -9,11 +9,11 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	0.2.11
-Release:	3
+Version:	0.2.12
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		https://fedorahosted.org/libosinfo/
+Url:		https://libosinfo.org/
 Source0:	https://fedorahosted.org/releases/l/i/libosinfo/%{name}-%{version}.tar.gz
 BuildRequires:	vala
 BuildRequires:	vala-tools
