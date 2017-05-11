@@ -9,7 +9,7 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	0.2.12
+Version:	1.0.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -96,9 +96,7 @@ chmod a-x examples/*.js examples/*.py
 %files common -f %{name}.lang
 %{_bindir}/osinfo-detect
 %{_bindir}/osinfo-install-script
-%{_bindir}/osinfo-db-validate
 %{_bindir}/osinfo-query
-/lib/udev/rules.d/95-osinfo.rules
 %{_datadir}/libosinfo
 %{_mandir}/man1/osinfo*.1*
 

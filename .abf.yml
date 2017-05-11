@@ -1,4 +1,2 @@
-removed_sources:
-  libosinfo-0.2.11.tar.gz: 5123247ce495136df8cae6bf889b70c43ab33f17
 sources:
-  libosinfo-0.2.12.tar.gz: 29882e2d50570c6e188249f13aac59b6611d2443
+  libosinfo-1.0.0.tar.gz: 0ab57b57625744821a495e0cab1287ab293a6cfd
