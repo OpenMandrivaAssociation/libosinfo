@@ -9,12 +9,12 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	1.0.0
-Release:	2
+Version:	1.2.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
-Source0:	https://fedorahosted.org/releases/l/i/libosinfo/%{name}-%{version}.tar.gz
+Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.gz
 BuildRequires:	vala
 BuildRequires:	vala-tools
 BuildRequires:	pkgconfig(check)
@@ -24,13 +24,6 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 Requires:	udev
-
-%track
-prog %{name} = {
-	url = https://fedorahosted.org/releases/l/i/libosinfo/
-	regex = %{name}-(__VER__)\.tar\.gz
-	version = %{version}
-}
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
