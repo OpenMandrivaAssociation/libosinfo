@@ -88,7 +88,6 @@ chmod a-x examples/*.js examples/*.py
 %{_bindir}/osinfo-detect
 %{_bindir}/osinfo-install-script
 %{_bindir}/osinfo-query
-%{_datadir}/libosinfo
 %{_mandir}/man1/osinfo*.1*
 
 %files -n %{libname}
