@@ -5,12 +5,12 @@
 %define girname %mklibname %{oname}-gir %{api}
 %define devname %mklibname %{oname} %{api} -d
 
-%define __no_autoreq '^%{_datadir}/doc/%{devname}/demo.*$'
+%global __requires_exclude_from '^%{_datadir}/doc/%{devname}/demo.*$'
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	1.2.0
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
@@ -30,14 +30,12 @@ libosinfo is a library that allows virtualization provisioning tools to
 determine the optimal device settings for a hypervisor/operating system
 combination.
 
-
 %package common
 Summary:	Non-library files for the "%{libname}" library
 Group:		System/Libraries
 
 %description common
 Platform-independent files for the "%{libname}" library
-
 
 %package -n %{libname}
 Summary:	Library plugin handling
@@ -69,20 +67,20 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x \
+%configure \
 	--enable-introspection=yes \
 	--enable-vala=yes \
 	--enable-udev=yes \
 	--disable-static
-%make
+%make_build
 
 chmod a-x examples/*.js examples/*.py
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} || touch %{name}.lang
 
@@ -111,4 +109,3 @@ chmod a-x examples/*.js examples/*.py
 %{_datadir}/gir-1.0/Libosinfo-%{api}.gir
 %{_datadir}/gtk-doc/html/Libosinfo
 %{_datadir}/vala/vapi/libosinfo-1.0.vapi
-
