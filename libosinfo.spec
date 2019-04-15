@@ -89,6 +89,10 @@ chmod a-x examples/*.js examples/*.py
 %{_bindir}/osinfo-install-script
 %{_bindir}/osinfo-query
 %{_mandir}/man1/osinfo*.1*
+%ifarch %{arm} %{armx}
+%{_datadir}/libosinfo/usb.ids
+%{_datadir}/libosinfo/pci.ids
+%endif
 
 %files -n %{libname}
 %{_libdir}/%{name}-%{api}.so.%{major}*
