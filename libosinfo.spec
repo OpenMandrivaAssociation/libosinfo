@@ -90,8 +90,8 @@ chmod a-x examples/*.js examples/*.py
 %{_bindir}/osinfo-query
 %{_mandir}/man1/osinfo*.1*
 %ifarch %{arm} %{armx}
-%{datadir}/libosinfo/usb.ids
-%{datadir}/llibosinfo/pci.ids
+%{_datadir}/libosinfo/usb.ids
+%{_datadir}/llibosinfo/pci.ids
 %endif
 
 %files -n %{libname}
