@@ -10,7 +10,7 @@
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
 Version:	1.4.0
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
@@ -46,6 +46,18 @@ Suggests:	%{name}-common = %{version}-%{release}
 libosinfo is a library that allows virtualization provisioning tools to
 determine the optimal device settings for a hypervisor/operating system
 combination.
+
+%package vala
+Summary: Vala bindings
+Group: Development/Other
+Requires: %{name} = %{version}-%{release}
+
+%description vala
+libosinfo is a library that allows virtualization provisioning tools to
+determine the optimal device settings for a hypervisor/operating system
+combination.
+
+This package provides the Vala bindings for libosinfo library.
 
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
@@ -97,6 +109,10 @@ chmod a-x examples/*.js examples/*.py
 %files -n %{libname}
 %{_libdir}/%{name}-%{api}.so.%{major}*
 
+%files vala
+%defattr(-, root, root)
+%{_datadir}/vala/vapi/libosinfo-1.0.vapi
+
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Libosinfo-%{api}.typelib
 
@@ -111,4 +127,3 @@ chmod a-x examples/*.js examples/*.py
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
 %{_datadir}/gir-1.0/Libosinfo-%{api}.gir
 %{_datadir}/gtk-doc/html/Libosinfo
-%{_datadir}/vala/vapi/libosinfo-1.0.vapi
