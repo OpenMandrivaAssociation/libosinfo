@@ -1,0 +1,12 @@
+diff -up libosinfo-1.4.0/examples/demo.py.omv~ libosinfo-1.4.0/examples/demo.py
+--- libosinfo-1.4.0/examples/demo.py.omv~	2019-04-21 23:10:12.784935114 +0200
++++ libosinfo-1.4.0/examples/demo.py	2019-04-21 23:12:44.941927732 +0200
+@@ -2,7 +2,7 @@
+ 
+ import gi
+ gi.require_version('Libosinfo', '1.0')
+-from gi.repository import Libosinfo as osinfo;
++from gi.repository import Libosinfo as osinfo
+ 
+ loader = osinfo.Loader()
+ loader.process_path("./")

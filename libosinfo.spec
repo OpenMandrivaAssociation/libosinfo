@@ -10,11 +10,12 @@
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
 Version:	1.4.0
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
 Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.gz
+Patch0:		libosinfo-1.4.0-demo.py-syntax-error.patch
 BuildRequires:	vala
 BuildRequires:	vala-tools
 BuildRequires:	pkgconfig(check)
