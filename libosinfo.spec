@@ -52,7 +52,7 @@ combination.
 %package vala
 Summary: Vala bindings
 Group: Development/Other
-Requires: %{name} = %{version}-%{release}
+Requires: %{name}-common = %{version}-%{release}
 
 %description vala
 libosinfo is a library that allows virtualization provisioning tools to
