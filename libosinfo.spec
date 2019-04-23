@@ -10,7 +10,7 @@
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
 Version:	1.4.0
-Release:	4
+Release:	5
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
+BuildRequires:	pkgconfig(vapigen)
 Requires:	udev
 
 %description
