@@ -25,7 +25,10 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(vapigen)
+BuildRequires:	osinfo-db
 Requires:	udev
+Requires:	osinfo-db
+Requires:	osinfo-db-tools
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
@@ -103,8 +106,6 @@ chmod a-x examples/*.js examples/*.py
 %{_bindir}/osinfo-install-script
 %{_bindir}/osinfo-query
 %{_mandir}/man1/osinfo*.1*
-%{_datadir}/libosinfo/usb.ids
-%{_datadir}/libosinfo/pci.ids
 
 %files -n %{libname}
 %{_libdir}/%{name}-%{api}.so.%{major}*
