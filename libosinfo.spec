@@ -9,15 +9,15 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	1.6.0
-Release:	2
+Version:	1.7.1
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
-Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.gz
-Patch0:		libosinfo-1.4.0-demo.py-syntax-error.patch
+Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.xz
 BuildRequires:	vala
 BuildRequires:	vala-tools
+BuildRequires:	meson
 BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -87,17 +87,11 @@ developing applications that use %{name}.
 %autosetup -p1
 
 %build
-%configure \
-	--enable-introspection=yes \
-	--enable-vala=yes \
-	--enable-udev=yes \
-	--disable-static
-%make_build
-
-chmod a-x examples/*.js examples/*.py
+%meson -Denable-gtk-doc=false
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} || touch %{name}.lang
 
@@ -111,20 +105,16 @@ chmod a-x examples/*.js examples/*.py
 %{_libdir}/%{name}-%{api}.so.%{major}*
 
 %files vala
-%defattr(-, root, root)
-%{_datadir}/vala/vapi/libosinfo-1.0.vapi
+%{_datadir}/vala/vapi/libosinfo-1.0.*
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Libosinfo-%{api}.typelib
 
 %files -n %{devname}
 %doc AUTHORS ChangeLog COPYING.LIB NEWS README
-%doc examples/demo.js
-%doc examples/demo.py
 %{_libdir}/%{name}-%{api}.so
 %dir %{_includedir}/%{name}-%{api}/
 %dir %{_includedir}/%{name}-%{api}/osinfo/
 %{_includedir}/%{name}-%{api}/osinfo/*.h
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
 %{_datadir}/gir-1.0/Libosinfo-%{api}.gir
-%{_datadir}/gtk-doc/html/Libosinfo
