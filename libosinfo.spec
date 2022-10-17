@@ -10,18 +10,21 @@
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
 Version:	1.10.0
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
 Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.xz
+# Allow choose soup API
+Patch0:   https://gitlab.com/libosinfo/libosinfo/-/commit/3a0fef72b11e2a22cac61a93a5b5b796885ac7e7.patch
+
 BuildRequires:	vala
 BuildRequires:	vala-tools
 BuildRequires:	meson
 BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libsoup-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(vapigen)
@@ -87,7 +90,9 @@ developing applications that use %{name}.
 %autosetup -p1
 
 %build
-%meson -Denable-gtk-doc=false
+%meson  \
+        -Denable-gtk-doc=false\
+        -Dlibsoup-abi=3.0
 %meson_build
 
 %install
