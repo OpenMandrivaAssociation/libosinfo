@@ -9,8 +9,8 @@
 
 Summary:	A library for managing OS information for virtualization
 Name:		libosinfo
-Version:	1.10.0
-Release:	3
+Version:	1.11.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
