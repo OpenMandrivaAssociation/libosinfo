@@ -15,8 +15,6 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
 Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.xz
-# Allow choose soup API
-Patch0:   https://gitlab.com/libosinfo/libosinfo/-/commit/3a0fef72b11e2a22cac61a93a5b5b796885ac7e7.patch
 
 BuildRequires:	vala
 BuildRequires:	vala-tools
