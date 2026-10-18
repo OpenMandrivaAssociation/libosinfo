@@ -15,6 +15,8 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://libosinfo.org/
 Source0:	https://releases.pagure.org/libosinfo/%{name}-%{version}.tar.xz
+# libxml2 2.14 deprecated xmlBuffer.content and xmlParserCtxt.lastError
+Patch0:		libosinfo-1.12.0-libxml2.patch
 
 BuildRequires:	vala
 BuildRequires:	vala-tools
